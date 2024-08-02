@@ -1,11 +1,54 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título de la Página</title>
+    <title>CTG QUIMICA</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Contenido de la página -->
+    <div id="login-container">
+        <h2>Iniciar sesión</h2>
+        <input type="email" id="email" placeholder="Ingrese su correo electrónico">
+        <button onclick="checkEmail()">Iniciar sesión</button>
+        <p id="login-message"></p>
+    </div>
+    <div id="content-container" style="display:none;">
+        <div class="tabs">
+            <div class="tab" onclick="showContent('content1')">12ºF</div>
+            <div class="tab" onclick="showContent('content2')">12ºG</div>
+            <div class="tab" onclick="showContent('content3')">12ºH</div>
+            <div class="tab" onclick="showContent('content4')">12ºI</div>
+            <div class="tab" onclick="showContent('content5')">12ºJ</div>
+            <div class="tab" onclick="showContent('content6')">12ºK</div>
+        </div>
+
+        <div id="content1" class="tab-content">
+            <h2>Contenido para 12ºF</h2>
+            <p>Este es el contenido para la pestaña 12ºF.</p>
+        </div>
+        <div id="content2" class="tab-content">
+            <h2>Contenido para 12ºG</h2>
+            <p>Este es el contenido para la pestaña 12ºG.</p>
+        </div>
+        <div id="content3" class="tab-content">
+            <h2>Contenido para 12ºH</h2>
+            <p>Este es el contenido para la pestaña 12ºH.</p>
+        </div>
+        <div id="content4" class="tab-content">
+            <h2>Contenido para 12ºI</h2>
+            <p>Este es el contenido para la pestaña 12ºI.</p>
+        </div>
+        <div id="content5" class="tab-content">
+            <h2>Contenido para 12ºJ</h2>
+            <p>Este es el contenido para la pestaña 12ºJ.</p>
+        </div>
+        <div id="content6" class="tab-content">
+            <h2>Contenido para 12ºK</h2>
+            <p>Este es el contenido para la pestaña 12ºK.</p>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
