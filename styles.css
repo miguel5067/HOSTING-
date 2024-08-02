@@ -1,0 +1,75 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: rgb(0, 0, 0);
+}
+
+/* Estilos para el contenedor de inicio de sesión */
+#login-container {
+    text-align: center;
+    padding: 450px;
+    background-color: rgb(18, 53, 255); /* Color sólido en formato RGB */
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    color: rgb(255, 255, 255); /* Cambia el color del texto para que contraste con el fondo */
+}
+
+#login-container input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+
+#login-container button {
+    padding: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#login-container button:hover {
+    background-color: #45a049;
+}
+
+#login-message {
+    color: red;
+}
+
+/* Estilos para las pestañas */
+.tabs {
+    display: flex;
+    cursor: pointer;
+    border-bottom: 1px solid #000000;
+    margin-top: 20px;
+}
+
+.tab {
+    padding: 10px;
+    border: 1px solid #000000;
+    border-bottom: none;
+    background-color: #f1f1f1;
+    margin-right: 5px;
+    flex: 1;
+    text-align: center;
+}
+
+.tab.active {
+    background-color: #dddddd;
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-top: none;
+}
+
+.tab-content.active {
+    display: block;
+    background: #ffffff;
+}
