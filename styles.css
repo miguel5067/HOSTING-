@@ -2,74 +2,107 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
-    background: rgb(0, 0, 0);
+    background: rgb(0, 0, 0); /* Fondo negro */
+    margin: 0; /* Elimina el margen por defecto */
 }
 
 /* Estilos para el contenedor de inicio de sesión */
 #login-container {
     text-align: center;
-    padding: 450px;
+    padding: 40px; /* Ajusta el padding para un tamaño razonable */
     background-color: rgb(18, 53, 255); /* Color sólido en formato RGB */
-    border-radius: 25px;
-    box-shadow: 0px 0px 10px rgb(0, 0, 0);
-    color: rgb(255, 255, 255); /* Cambia el color del texto para que contraste con el fondo */
+    border-radius: 25px; /* Esquinas redondeadas */
+    box-shadow: 0px 0px 10px rgb(0, 0, 0); /* Sombra sutil */
+    color: rgb(255, 255, 255); /* Color del texto */
+    max-width: 400px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    box-sizing: border-box; /* Incluye padding y borde en el cálculo del ancho total */
 }
 
+/* Estilos para el campo de entrada de correo electrónico */
 #login-container input {
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #000000;
-    border-radius: 4px;
+    border: 1px solid #ffffff; /* Borde blanco */
+    border-radius: 4px; /* Esquinas redondeadas */
+    width: 100%; /* Ancho completo del contenedor */
+    box-sizing: border-box; /* Incluye padding y borde en el cálculo del ancho total */
 }
 
+/* Estilos para el botón de inicio de sesión */
 #login-container button {
     padding: 10px;
     border: none;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-    border-radius: 4px;
+    background-color: #4CAF50; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    border-radius: 4px; /* Esquinas redondeadas */
+    width: 100%; /* Ancho completo del contenedor */
+    box-sizing: border-box; /* Incluye padding y borde en el cálculo del ancho total */
 }
 
 #login-container button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Color de fondo al pasar el cursor */
 }
 
+/* Estilo para el mensaje de error o éxito */
 #login-message {
-    color: red;
+    color: red; /* Color del texto del mensaje */
+    margin-top: 10px; /* Espacio superior del mensaje */
 }
 
 /* Estilos para las pestañas */
 .tabs {
     display: flex;
-    cursor: pointer;
-    border-bottom: 1px solid #000000;
-    margin-top: 20px;
+    flex-direction: column; /* Alinea las pestañas verticalmente */
+    position: fixed; /* Fija el contenedor en la esquina */
+    top: 0;
+    right: 0;
+    background-color: #f1f1f1; /* Fondo opcional */
+    padding: 10px;
 }
 
+/* Estilo para cada pestaña */
 .tab {
     padding: 10px;
     border: 1px solid #000000;
     border-bottom: none;
     background-color: #f1f1f1;
-    margin-right: 5px;
-    flex: 1;
+    margin-bottom: 5px; /* Espacio entre las pestañas */
     text-align: center;
+    cursor: pointer; /* Indicador de clickeable */
 }
 
 .tab.active {
-    background-color: #dddddd;
+    background-color: #dddddd; /* Fondo cuando está activa */
     font-weight: bold;
 }
 
+/* Estilo para el contenido de las pestañas */
 .tab-content {
-    display: none;
-    padding: 10px;
-    border: 1px solid #ffffff;
-    border-top: none;
+    display: none; /* Ocultar por defecto */
+    padding: 20px; /* Espacio interno */
+    border: 1px solid #ffffff; /* Borde blanco */
+    border-top: none; /* Sin borde superior */
+    margin: 20px auto; /* Centra el contenido horizontalmente con margen superior */
+    max-width: 80%; /* Limita el ancho máximo */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del ancho total */
 }
 
 .tab-content.active {
-    display: block;
-    background: #ffffff;
+    display: block; /* Muestra el contenido activo */
+    background: #ffffff; /* Fondo blanco */
+}
+
+/* Estilos para la adaptación a pantallas pequeñas */
+@media (max-width: 768px) {
+    #login-container {
+        padding: 20px; /* Ajuste de padding para pantallas más pequeñas */
+        max-width: 90%; /* Ancho máximo ajustado */
+    }
+
+    .tab-content {
+        max-width: 95%; /* Ajuste del ancho máximo */
+    }
 }
