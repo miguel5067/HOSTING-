@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CTG QUIMICA</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
 </head>
 <body>
+    <!-- Contenedor del formulario de login -->
     <div id="login-container">
         <h2>Iniciar sesión</h2>
+        <!-- Campo de entrada para el correo electrónico -->
         <input type="email" id="email" placeholder="Ingrese su correo electrónico">
+        <!-- Botón para iniciar sesión, llama a la función checkEmail() al hacer clic -->
         <button onclick="checkEmail()">Iniciar sesión</button>
+        <!-- Mensaje de error o éxito del login -->
         <p id="login-message"></p>
     </div>
+
+    <!-- Contenedor del contenido que se muestra después del login -->
     <div id="content-container" style="display:none;">
+        <!-- Sección de pestañas -->
         <div class="tabs">
+            <!-- Cada pestaña llama a la función showContent() con el ID correspondiente al hacer clic -->
             <div class="tab" onclick="showContent('content1')">12ºF</div>
             <div class="tab" onclick="showContent('content2')">12ºG</div>
             <div class="tab" onclick="showContent('content3')">12ºH</div>
@@ -23,6 +31,7 @@
             <div class="tab" onclick="showContent('content6')">12ºK</div>
         </div>
 
+        <!-- Contenidos asociados a cada pestaña, por defecto están ocultos -->
         <div id="content1" class="tab-content">
             <h2>Contenido para 12ºF</h2>
             <p>Este es el contenido para la pestaña 12ºF.</p>
@@ -49,6 +58,7 @@
         </div>
     </div>
 
-    <script src="scripts.js"></script>
+    <script src="scripts.js"></script> <!-- Enlace al archivo JavaScript -->
 </body>
 </html>
+
