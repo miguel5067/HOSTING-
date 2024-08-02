@@ -7,58 +7,91 @@
     <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
 </head>
 <body>
-    <!-- Contenedor del formulario de login -->
-    <div id="login-container">
-        <h2>Iniciar sesión</h2>
-        <!-- Campo de entrada para el correo electrónico -->
-        <input type="email" id="email" placeholder="Ingrese su correo electrónico">
-        <!-- Botón para iniciar sesión, llama a la función checkEmail() al hacer clic -->
-        <button onclick="checkEmail()">Iniciar sesión</button>
-        <!-- Mensaje de error o éxito del login -->
-        <p id="login-message"></p>
+    <!-- Encabezado -->
+    <header id="header">
+        <h1>Bienvenido a CTG QUIMICA</h1>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav id="nav-bar" class="hidden"> <!-- Agregar clase hidden para ocultar en el login -->
+        <ul>
+            <li><a href="#inicio" onclick="showContent('inicio')">Inicio</a></li>
+            <li><a href="#historia" onclick="showContent('historia')">Historia</a></li>
+            <li>
+                <a href="#" id="grupos" onclick="toggleDropdown()">Grupos</a>
+                <ul id="dropdown-grupos" class="dropdown hidden"> <!-- Ocultar el dropdown por defecto -->
+                    <li><a href="#grupo-12F" onclick="showContent('content1')">12ºF</a></li>
+                    <li><a href="#grupo-12G" onclick="showContent('content2')">12ºG</a></li>
+                    <li><a href="#grupo-12H" onclick="showContent('content3')">12ºH</a></li>
+                    <li><a href="#grupo-12I" onclick="showContent('content4')">12ºI</a></li>
+                    <li><a href="#grupo-12J" onclick="showContent('content5')">12ºJ</a></li>
+                    <li><a href="#grupo-12K" onclick="showContent('content6')">12ºK</a></li>
+                </ul>
+            </li>
+            <li><a href="#programadores" onclick="showContent('programadores')">Programadores</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenedor principal -->
+    <div id="main-container">
+        <!-- Contenedor del formulario de login -->
+        <div id="login-container">
+            <h2>Iniciar sesión</h2>
+            <!-- Campo de entrada para el correo electrónico -->
+            <input type="email" id="email" placeholder="Ingrese su correo electrónico">
+            <!-- Botón para iniciar sesión, llama a la función checkEmail() al hacer clic -->
+            <button onclick="checkEmail()">Iniciar sesión</button>
+            <!-- Mensaje de error o éxito del login -->
+            <p id="login-message"></p>
+        </div>
+
+        <!-- Contenedor del contenido que se muestra después del login -->
+        <div id="content-container" style="display:none;">
+            <!-- Contenidos asociados a cada sección -->
+            <div id="inicio" class="tab-content">
+                <h2>Inicio</h2>
+                <p>Contenido de la sección de inicio.</p>
+            </div>
+            <div id="historia" class="tab-content">
+                <h2>Historia</h2>
+                <p>Contenido de la sección de historia.</p>
+            </div>
+            <div id="programadores" class="tab-content">
+                <h2>Programadores</h2>
+                <p>Contenido de la sección de programadores.</p>
+            </div>
+            <div id="content1" class="tab-content">
+                <h2>Contenido para 12ºF</h2>
+                <p>Este es el contenido para la pestaña 12ºF.</p>
+            </div>
+            <div id="content2" class="tab-content">
+                <h2>Contenido para 12ºG</h2>
+                <p>Este es el contenido para la pestaña 12ºG.</p>
+            </div>
+            <div id="content3" class="tab-content">
+                <h2>Contenido para 12ºH</h2>
+                <p>Este es el contenido para la pestaña 12ºH.</p>
+            </div>
+            <div id="content4" class="tab-content">
+                <h2>Contenido para 12ºI</h2>
+                <p>Este es el contenido para la pestaña 12ºI.</p>
+            </div>
+            <div id="content5" class="tab-content">
+                <h2>Contenido para 12ºJ</h2>
+                <p>Este es el contenido para la pestaña 12ºJ.</p>
+            </div>
+            <div id="content6" class="tab-content">
+                <h2>Contenido para 12ºK</h2>
+                <p>Este es el contenido para la pestaña 12ºK.</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Contenedor del contenido que se muestra después del login -->
-    <div id="content-container" style="display:none;">
-        <!-- Sección de pestañas -->
-        <div class="tabs">
-            <!-- Cada pestaña llama a la función showContent() con el ID correspondiente al hacer clic -->
-            <div class="tab" onclick="showContent('content1')">12ºF</div>
-            <div class="tab" onclick="showContent('content2')">12ºG</div>
-            <div class="tab" onclick="showContent('content3')">12ºH</div>
-            <div class="tab" onclick="showContent('content4')">12ºI</div>
-            <div class="tab" onclick="showContent('content5')">12ºJ</div>
-            <div class="tab" onclick="showContent('content6')">12ºK</div>
-        </div>
-
-        <!-- Contenidos asociados a cada pestaña, por defecto están ocultos -->
-        <div id="content1" class="tab-content">
-            <h2>Contenido para 12ºF</h2>
-            <p>Este es el contenido para la pestaña 12ºF.</p>
-        </div>
-        <div id="content2" class="tab-content">
-            <h2>Contenido para 12ºG</h2>
-            <p>Este es el contenido para la pestaña 12ºG.</p>
-        </div>
-        <div id="content3" class="tab-content">
-            <h2>Contenido para 12ºH</h2>
-            <p>Este es el contenido para la pestaña 12ºH.</p>
-        </div>
-        <div id="content4" class="tab-content">
-            <h2>Contenido para 12ºI</h2>
-            <p>Este es el contenido para la pestaña 12ºI.</p>
-        </div>
-        <div id="content5" class="tab-content">
-            <h2>Contenido para 12ºJ</h2>
-            <p>Este es el contenido para la pestaña 12ºJ.</p>
-        </div>
-        <div id="content6" class="tab-content">
-            <h2>Contenido para 12ºK</h2>
-            <p>Este es el contenido para la pestaña 12ºK.</p>
-        </div>
-    </div>
+    <!-- Pie de página -->
+    <footer id="footer">
+        <p>&copy; 2024 CTG QUIMICA. Todos los derechos reservados.</p>
+    </footer>
 
     <script src="scripts.js"></script> <!-- Enlace al archivo JavaScript -->
 </body>
 </html>
-
