@@ -16,21 +16,29 @@ function checkEmail() {
 
 function showContent(id) {
     // Ocultar todos los contenidos
-    var contents = document.querySelectorAll('.tab-content');
-    contents.forEach(function(content) {
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(content => {
         content.classList.remove('active');
     });
 
     // Quitar la clase activa de todas las pestañas
-    var tabs = document.querySelectorAll('.tab');
-    tabs.forEach(function(tab) {
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
         tab.classList.remove('active');
     });
 
     // Mostrar el contenido seleccionado
-    document.getElementById(id).classList.add('active');
+    const selectedContent = document.getElementById(id);
+    if (selectedContent) {
+        selectedContent.classList.add('active');
+    }
 
     // Activar la pestaña correspondiente
-    var targetTab = Array.from(tabs).find(tab => tab.textContent.trim() === document.getElementById(id).querySelector('h2').textContent.split(' ')[2]);
-    if (targetTab) targetTab.classList.add('active');
+    const targetTab = Array.from(tabs).find(tab => {
+        const tabContentId = tab.getAttribute('onclick').match(/'(\w+)'/)[1];
+        return tabContentId === id;
+    });
+    if (targetTab) {
+        targetTab.classList.add('active');
+    }
 }
