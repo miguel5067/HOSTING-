@@ -1,88 +1,61 @@
-const allowedEmail = 'miguelalveo0709@gmail.com'; // Correo electrónico permitido
+document.addEventListener('DOMContentLoaded', function() {
+    // Manejar la autenticación (si se requiere)
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe
 
-function checkEmail() {
-    const emailInput = document.getElementById('email');
-    const loginMessage = document.getElementById('login-message');
-    const email = emailInput.value.trim();
-    const header = document.getElementById('header');
-    const footer = document.getElementById('footer');
-    const loginContainer = document.getElementById('login-container');
-    const contentContainer = document.getElementById('content-container');
+            // Definir el correo electrónico permitido
+            const correoPermitido = "miguelalveo0709@gmail.com";
 
-    if (email === allowedEmail) {
-        // Ocultar login y mostrar contenido
-        loginContainer.style.display = 'none';
-        contentContainer.style.display = 'block';
-        header.classList.remove('hidden');
-        footer.classList.remove('hidden');
-        showContent('content1'); // Inicializar la primera pestaña activa
-    } else {
-        loginMessage.textContent = 'Correo electrónico no autorizado.';
-    }
-}
+            // Obtener el valor del campo de correo electrónico
+            const email = document.getElementById('email').value;
 
-function showContent(id) {
-    // Ocultar todos los contenidos
-    const contents = document.querySelectorAll('.tab-content');
-    contents.forEach(content => {
-        content.classList.remove('active');
-    });
-
-    // Quitar la clase activa de todas las pestañas
-    const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(tab => {
-        tab.classList.remove('active');
-    });
-
-    // Mostrar el contenido seleccionado
-    const selectedContent = document.getElementById(id);
-    if (selectedContent) {
-        selectedContent.classList.add('active');
+            // Validar el correo electrónico
+            if (email === correoPermitido) {
+                // Redirigir a la página de contenido confidencial
+                window.location.href = 'contenido.html';
+            } else {
+                alert("Correo electrónico no válido.");
+            }
+        });
     }
 
-    // Activar la pestaña correspondiente
-    const targetTab = Array.from(tabs).find(tab => {
-        const tabContentId = tab.getAttribute('onclick').match(/'(\w+)'/)[1];
-        return tabContentId === id;
-    });
-    if (targetTab) {
-        targetTab.classList.add('active');
-    }
-}
+    // Manejar la navegación entre secciones
+    const navLinks = document.querySelectorAll('nav a[data-target]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
 
-document.addEventListener('DOMContentLoaded', () => {
-    const header = document.getElementById('header');
-    const footer = document.getElementById('footer');
-    const loginContainer = document.getElementById('login-container');
-    const dropdownGrupos = document.getElementById('dropdown-grupos');
+            const targetId = link.getAttribute('data-target');
+            const sections = document.querySelectorAll('.content-section');
 
-    // Inicializar el estado del encabezado y pie de página
-    if (loginContainer.style.display === 'none') {
-        header.classList.remove('hidden');
-        footer.classList.remove('hidden');
-    } else {
-        header.classList.add('hidden');
-        footer.classList.add('hidden');
-    }
+            // Ocultar todas las secciones
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
 
-    // Manejar clics en enlaces de la barra de navegación
-    document.querySelectorAll('#nav-bar a').forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const id = link.getAttribute('href').substring(1); // Extrae el ID de la sección
-            showContent(id); // Mostrar contenido basado en el ID de la pestaña
+            // Mostrar la sección seleccionada
+            document.getElementById(targetId).style.display = 'block';
         });
     });
 
-    // Mostrar/Ocultar el menú desplegable al hacer clic en "Grupos"
-    const gruposLink = document.getElementById('grupos');
-    gruposLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        if (dropdownGrupos.style.display === 'block') {
-            dropdownGrupos.style.display = 'none';
-        } else {
-            dropdownGrupos.style.display = 'block';
-        }
+    // Manejar la selección de grupos
+    const groupLinks = document.querySelectorAll('nav ul.dropdown a[data-group]');
+    groupLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+
+            const groupId = link.getAttribute('data-group');
+            const groupDetails = document.querySelectorAll('.group-detail');
+
+            // Ocultar todos los detalles de grupo
+            groupDetails.forEach(detail => {
+                detail.style.display = 'none';
+            });
+
+            // Mostrar el detalle del grupo seleccionado
+            document.getElementById(groupId).style.display = 'block';
+        });
     });
 });
-
