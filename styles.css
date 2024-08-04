@@ -2,7 +2,8 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #000000;
+    background: linear-gradient(120deg, #00008B, #00CED1);
+    min-height: 100vh;
 }
 
 /* Estilo para la barra de navegación */
@@ -45,7 +46,7 @@ nav ul li ul.dropdown {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #444;
+    background-color: #000000;
     padding: 0;
     list-style: none;
     margin: 0;
@@ -64,7 +65,7 @@ nav ul li ul.dropdown li a {
 }
 
 nav ul li ul.dropdown li a:hover {
-    background-color: #000000;
+    background-color: #1a1dce;
     text-decoration: none;
 }
 
@@ -77,8 +78,8 @@ nav ul li ul.dropdown li a:hover {
 .content-section {
     margin-top: 1rem;
     padding: 1rem;
-    background: #000000;
-    border: 1px solid #000000;
+    background: #ffffff;
+    border: 1px solid #ffffff;
     border-radius: 4px;
 }
 
@@ -98,7 +99,7 @@ nav ul li ul.dropdown li a:hover {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #000000;
+    background: linear-gradient(120deg, #00008B, #00CED1);
 }
 
 form {
@@ -106,7 +107,14 @@ form {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center; /* Asegura que el texto dentro del formulario esté centrado */
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 label {
@@ -135,5 +143,53 @@ button {
 button:hover {
     background: #0056b3;
 }
+/* Estilo para el pie de página */
+footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con algo de transparencia */
+    color: #ffffff;
+    text-align: center;
+    padding: 0.5rem; /* Delgado */
+    position: absolute; /* Asegura que el pie de página se quede en la parte inferior */
+    bottom: 0;
+    width: 100%;
+}
+
+/* Asegurar que el contenedor principal tenga suficiente espacio para el pie de página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-bottom: 2rem; /* Espacio para el pie de página */
+    background: linear-gradient(120deg, #00008B, #00CED1);
+}
+
+/* Estilo para el contenedor de contenido principal para que el pie de página se ajuste */
+#infoSection {
+    padding-bottom: 2rem; /* Espacio para el pie de página */
+}
 
 
+/* Media Queries para hacer el diseño responsivo */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    form {
+        width: 90%;
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 601px) {
+    nav ul {
+        flex-direction: row;
+    }
+
+    nav ul li {
+        margin: 0 1rem;
+    }
+}
