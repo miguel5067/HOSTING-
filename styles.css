@@ -2,8 +2,16 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background: linear-gradient(120deg, #00008B, #00CED1);
+    padding: 0;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(120deg, #00008B, #00CED1);
+}
+
+/* Contenedor principal para asegurar que el contenido principal y el pie de página estén en columna */
+#mainContent {
+    flex: 1;
 }
 
 /* Estilo para la barra de navegación */
@@ -50,6 +58,8 @@ nav ul li ul.dropdown {
     padding: 0;
     list-style: none;
     margin: 0;
+    width: 150px; /* Ajusta el ancho según tus necesidades */
+    border-radius: 20px; /* Opcional, para bordes redondeados */
 }
 
 nav ul li:hover ul.dropdown {
@@ -76,11 +86,11 @@ nav ul li ul.dropdown li a:hover {
 }
 
 .content-section {
-    margin-top: 1rem;
-    padding: 1rem;
+    margin-top: 0rem;
+    padding: 5rem;
     background: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 4px;
+    border: 5px solid #000000;
+    border-radius: 30px;
 }
 
 /* Estilo para los detalles del grupo */
@@ -143,30 +153,48 @@ button {
 button:hover {
     background: #0056b3;
 }
+
 /* Estilo para el pie de página */
 footer {
     background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con algo de transparencia */
     color: #ffffff;
     text-align: center;
     padding: 0.5rem; /* Delgado */
-    position: absolute; /* Asegura que el pie de página se quede en la parte inferior */
-    bottom: 0;
+    position: relative; /* Asegura que el pie de página esté al final del contenedor principal */
     width: 100%;
+    bottom: 0;
 }
 
 /* Asegurar que el contenedor principal tenga suficiente espacio para el pie de página */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding-bottom: 2rem; /* Espacio para el pie de página */
-    background: linear-gradient(120deg, #00008B, #00CED1);
-}
-
-/* Estilo para el contenedor de contenido principal para que el pie de página se ajuste */
-#infoSection {
+#mainContent {
     padding-bottom: 2rem; /* Espacio para el pie de página */
 }
 
+/* Estilo para la tabla de inventario */
+table.inventory {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 2px solid black; /* Borde exterior negro */
+}
+
+table.inventory th, table.inventory td {
+    border: 2px solid black; /* Bordes negros para celdas */
+    padding: 8px;
+    text-align: left;
+}
+
+table.inventory th {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+}
+
+table.inventory td img {
+    max-width: 150px;
+    height: auto;
+}
 
 /* Media Queries para hacer el diseño responsivo */
 @media (max-width: 600px) {
