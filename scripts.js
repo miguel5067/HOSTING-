@@ -5,30 +5,36 @@ document.addEventListener('DOMContentLoaded', function() {
         loginForm.addEventListener('submit', function(event) {
             event.preventDefault(); // Evitar que el formulario se envíe
 
-            // Definir el correo electrónico permitido
-            const correoPermitido = "miguelalveo0709@gmail.com";
+            // Definir el correo electrónico y la contraseña permitidos
+            const correoPermitido = "TomasGuardiaCTG@gmail.com";
+            const contrasenaPermitida = "CTGQuimica24"; // Cambia esto por la contraseña real
 
-            // Obtener el valor del campo de correo electrónico
+            // Obtener los valores del formulario
             const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
 
-            // Validar el correo electrónico
-            if (email === correoPermitido) {
+            // Validar el correo electrónico y la contraseña
+            if (email === correoPermitido && password === contrasenaPermitida) {
+                // Limpiar los campos del formulario
+                document.getElementById('email').value = '';
+                document.getElementById('password').value = '';
+
                 // Redirigir a la página de contenido confidencial
                 window.location.href = 'contenido.html';
             } else {
-                alert("Correo electrónico no válido.");
+                alert("Correo electrónico o contraseña no válidos.");
             }
         });
     }
 
     // Manejar la navegación entre secciones
     const navLinks = document.querySelectorAll('nav a[data-target]');
+    const sections = document.querySelectorAll('.content-section');
     navLinks.forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
 
             const targetId = link.getAttribute('data-target');
-            const sections = document.querySelectorAll('.content-section');
 
             // Ocultar todas las secciones
             sections.forEach(section => {
@@ -42,12 +48,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Manejar la selección de grupos
     const groupLinks = document.querySelectorAll('nav ul.dropdown a[data-group]');
+    const groupDetails = document.querySelectorAll('.group-detail');
     groupLinks.forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
 
             const groupId = link.getAttribute('data-group');
-            const groupDetails = document.querySelectorAll('.group-detail');
 
             // Ocultar todos los detalles de grupo
             groupDetails.forEach(detail => {
