@@ -92,6 +92,7 @@ nav ul li ul.dropdown li a:hover {
     border: 5px solid #000000;
     border-radius: 30px;
 }
+
 #inicio2 {
     text-align: center; /* Centra el texto horizontalmente */
     margin: 0 auto; /* Centra el div en la página si tiene un ancho específico */
@@ -115,40 +116,75 @@ nav ul li ul.dropdown li a:hover {
     height: 100vh;
     background: linear-gradient(120deg, #00008B, #00CED1);
 }
+
 .CTG {
     max-width: 300px;
     position: absolute;
     top: 770px;
-    left: 250px;
+    left: 10px; /* Ajusta la posición a la izquierda */
 }
+
 .Promo2K24 {
-    max-width: 300px;
+    max-width: 300px; /* Tamaño máximo del logo */
     position: absolute;
-    top: 730px;
-    left: 1250px;
+    top: 730px; /* Posición inicial en pantallas grandes */
+    right: 10px; /* Ajusta la posición a la derecha */
 }
 
 .imagen2 {
-   max-width: 300px; 
+    max-width: 300px; 
 }
+
 .descripcion2 {
     font-size: 20px;
     color: #000000;
 }
+
 .gatita1 {
     position: absolute;
     top: 170px;
     left: 750px;
 }
+
 .gatita2 {
     position: absolute;
     top: 220px;
     left: 750px;
 }
+
 .gatita3 {
     position: absolute;
     top: 270px;
     left: 750px;
+}
+
+/* Ajustar la posición de .gatita1, .gatita2 y .gatita3 dependiendo del tamaño de la pantalla */
+@media (max-width: 600px) {
+    .gatita1 {
+        left: 20px; /* Mueve la imagen hacia la izquierda en pantallas pequeñas */
+    }
+
+    .gatita2 {
+        left: 20px; /* Mueve la imagen hacia la izquierda en pantallas pequeñas */
+    }
+
+    .gatita3 {
+        left: 20px; /* Mueve la imagen hacia la izquierda en pantallas pequeñas */
+    }
+}
+
+@media (min-width: 601px) {
+    .gatita1 {
+        left: 600px; /* Ajusta la posición en pantallas medianas */
+    }
+
+    .gatita2 {
+        left: 600px; /* Ajusta la posición en pantallas medianas */
+    }
+
+    .gatita3 {
+        left: 600px; /* Ajusta la posición en pantallas medianas */
+    }
 }
 
 form {
@@ -237,10 +273,6 @@ table.inventory td img {
     height: auto;
 }
 
-
-
-
-
 /* Media Queries para hacer el diseño responsivo */
 @media (max-width: 600px) {
     nav ul {
@@ -255,6 +287,30 @@ table.inventory td img {
         width: 90%;
         padding: 1rem;
     }
+
+    .Promo2K24 {
+        top: 30%; /* Ajusta la posición superior en pantallas pequeñas */
+        right: 10px; /* Mantiene la posición a la derecha */
+        max-width: 80%; /* Ajusta el tamaño máximo del logo */
+    }
+
+    .CTG {
+        top: 30%; /* Ajusta la posición superior en pantallas pequeñas */
+        left: 10px; /* Mantiene la posición a la izquierda */
+        max-width: 80%; /* Ajusta el tamaño máximo del logo */
+    }
+
+    .gatita1 {
+        left: 10px; /* Ajusta la posición a la izquierda en pantallas pequeñas */
+    }
+
+    .gatita2 {
+        left: 10px; /* Ajusta la posición a la izquierda en pantallas pequeñas */
+    }
+
+    .gatita3 {
+        left: 10px; /* Ajusta la posición a la izquierda en pantallas pequeñas */
+    }
 }
 
 @media (min-width: 601px) {
@@ -264,5 +320,15 @@ table.inventory td img {
 
     nav ul li {
         margin: 0 1rem;
+    }
+
+    .Promo2K24 {
+        top: 730px; /* Mantiene la posición en pantallas grandes */
+        right: 130px; /* Ajusta la posición a la derecha */
+    }
+
+    .CTG {
+        top: 770px; /* Mantiene la posición en pantallas grandes */
+        left: 160px; /* Ajusta la posición a la izquierda */
     }
 }
